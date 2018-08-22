@@ -1,0 +1,6 @@
+import tushare as ts
+stock_info=ts.get_stock_basics()
+for i in stock_info.index:	
+    df = ts.get_hist_data(i)	
+    if df is not None:
+        df.to_csv("Astock/"+i+".csv")
