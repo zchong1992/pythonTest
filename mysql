@@ -1,0 +1,10 @@
+import MySQLdb
+db = MySQLdb.connect(host="", user="", passwd="", db="")
+c = db.cursor()
+max_price = 5
+c.execute("""SELECT * FROM user""")
+r = c.fetchone()
+db.close()
+print ("read line:")
+for  row in r:
+    print (row, end=' ')
